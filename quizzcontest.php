@@ -81,9 +81,14 @@ add_action('wp_head', 'addHeader');
 Shortcut : [quizzcontest_shortcode]
 */
 function displayQuizzContestShortCode() {
+    $quizzcontest_data = get_option('quizzcontest_data');
+    $question1 = $quizzcontest_data["'question1'"];
+    $question2 = $quizzcontest_data["'question2'"];
+
     $default_quizzcontest = "
         Le concours :  <br/>
-        <span class='quizzcontest_title'> " . get_option('quizzcontest_data'). " </span> <br/>
+        Question 1 : <span class='quizzcontest_title'> " . $question1 . " </span> <br/>
+        Question 2 : <span class='quizzcontest_title'> " . $question2 . " </span> <br/>
         Bonne chance !! <br/>
     ";
     return apply_filters('quizzcontest', $default_quizzcontest);

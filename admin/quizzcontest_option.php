@@ -1,3 +1,6 @@
+<?php 
+    $quizzcontest_data = get_option('quizzcontest_data'); 
+?>
 <div>
     <h2>Quizz Contest : Question/Réponse</h2>
     <form method="post" action="options.php">
@@ -5,11 +8,18 @@
 
         <table width="510">
             <tr valign="top">
-                <th width="92" scope="row">Question </th>
+                <th width="92" scope="row">Question 1: </th>
                 <td width="406">
-                    <input name="quizzcontest_data" type="text" id="quizzcontest_data" value="<?php echo get_option('quizzcontest_data'); ?>" />
+                    <input name="quizzcontest_data['question1']" type="text" id="quizzcontest_data['question1']" value="<?php echo $quizzcontest_data["'question1'"]; ?>" />
                </td>
             </tr>
+            <tr valign="top">
+                <th width="92" scope="row">Question 2: </th>
+                <td width="406">
+                    <input name="quizzcontest_data['question2']" type="text" id="quizzcontest_data['question2']" value="<?php echo $quizzcontest_data["'question2'"]; ?>" />
+               </td>
+            </tr>
+
         </table>
 
         <input type="hidden" name="action" value="update" />
