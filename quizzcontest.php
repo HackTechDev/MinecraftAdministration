@@ -44,12 +44,18 @@ The quizzcontest_data field is created in wp_options table
 Creates new database field 
 */
 function quizzcontest_install() {
-    add_option("quizzcontest_data", '', '', 'yes');
+    $default_option = array(
+                    "'version'" => '0.1',
+                    "'introduction'" => 'Q&R sur l\'informatique'
+                    );
+    add_option("quizzcontest_data", $default_option, "", "yes");
 
     /* Ceate new table */
     require_once( ABSPATH . '/wp-admin/includes/upgrade.php' );
+
     global $wpdb;
     $db_table_name = $wpdb->prefix . 'quizzcontest_qa';
+
     if( $wpdb->get_var( "SHOW TABLES LIKE '$db_table_name'" ) != $db_table_name ) {
         if ( ! empty( $wpdb->charset ) )
             $charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
@@ -66,6 +72,27 @@ function quizzcontest_install() {
             ";
         dbDelta( $sql );
     }
+
+    quizzcontest_insert_data();
+
+}
+
+function quizzcontest_insert_data() {
+    global $wpdb;
+
+    $wpdb->insert( 
+        'wp_quizzcontest_qa', 
+        array( 
+            'id' => 1, 
+            'question' => 'Quel est le créateur de Linux',
+            'answer' => 'Linus Torvalds'
+        ), 
+        array( 
+            '%d', 
+            '%s',
+            '%s', 
+        ) 
+    );
 }
 
 /* Deletes the database field */
@@ -108,13 +135,13 @@ Shortcut : [quizzcontest_shortcode]
 */
 function displayQuizzContestShortCode() {
     $quizzcontest_data = get_option('quizzcontest_data');
-    $question1 = $quizzcontest_data["'question1'"];
-    $question2 = $quizzcontest_data["'question2'"];
+    $version = $quizzcontest_data["'version'"];
+    $introduction = $quizzcontest_data["'introduction'"];
 
     $default_quizzcontest = "
         Le concours :  <br/>
-        Question 1 : <span class='quizzcontest_title'> " . $question1 . " </span> <br/>
-        Question 2 : <span class='quizzcontest_title'> " . $question2 . " </span> <br/>
+        Version : <span class='quizzcontest_title'> " . $version . " </span> <br/>
+        Introduction  : <span class='quizzcontest_title'> " . $introduction . " </span> <br/>
         Bonne chance !! <br/>
     ";
     return apply_filters('quizzcontest', $default_quizzcontest);

@@ -2,21 +2,21 @@
     $quizzcontest_data = get_option('quizzcontest_data'); 
 ?>
 <div>
-    <h2>Quizz Contest : Question/Réponse</h2>
+    <h2>Quizz Contest : Introduction/Réponse</h2>
     <form method="post" action="options.php">
         <?php wp_nonce_field('update-options'); ?>
 
         <table width="510">
             <tr valign="top">
-                <th width="92" scope="row">Question 1: </th>
+                <th width="92" scope="row">Version : </th>
                 <td width="406">
-                    <input name="quizzcontest_data['question1']" type="text" id="quizzcontest_data['question1']" value="<?php echo $quizzcontest_data["'question1'"]; ?>" />
+                    <input name="quizzcontest_data['version']" type="text" id="quizzcontest_data['version']" value="<?php echo $quizzcontest_data["'version'"]; ?>" />
                </td>
             </tr>
             <tr valign="top">
-                <th width="92" scope="row">Question 2: </th>
+                <th width="92" scope="row">Introduction : </th>
                 <td width="406">
-                    <input name="quizzcontest_data['question2']" type="text" id="quizzcontest_data['question2']" value="<?php echo $quizzcontest_data["'question2'"]; ?>" />
+                    <input name="quizzcontest_data['introduction']" type="text" id="quizzcontest_data['introduction']" value="<?php echo $quizzcontest_data["'introduction'"]; ?>" />
                </td>
             </tr>
 
