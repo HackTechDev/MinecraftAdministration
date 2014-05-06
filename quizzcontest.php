@@ -116,4 +116,15 @@ function displayTextAfterPost($content) {
   return $content;
 }
 //add_filter('the_content', 'displayTextAfterPost');
+
+// Add settings link on plugin page
+function quizzcontest_settings_link($links) { 
+  $settings_link = '<a href="options-general.php?page=quizzcontest.php">Paramétres</a>'; 
+  array_unshift($links, $settings_link); 
+  return $links; 
+}
+ 
+$plugin = plugin_basename(__FILE__); 
+add_filter("plugin_action_links_$plugin", 'quizzcontest_settings_link' );
+
 ?>
