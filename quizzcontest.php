@@ -44,12 +44,38 @@ The quizzcontest_data field is created in wp_options table
 Creates new database field 
 */
 function quizzcontest_install() {
-    add_option("quizzcontest_data", 'Default', '', 'yes');
+    add_option("quizzcontest_data", '', '', 'yes');
+
+    /* Ceate new table */
+    require_once( ABSPATH . '/wp-admin/includes/upgrade.php' );
+    global $wpdb;
+    $db_table_name = $wpdb->prefix . 'quizzcontest_qa';
+    if( $wpdb->get_var( "SHOW TABLES LIKE '$db_table_name'" ) != $db_table_name ) {
+        if ( ! empty( $wpdb->charset ) )
+            $charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
+        if ( ! empty( $wpdb->collate ) )
+            $charset_collate .= " COLLATE $wpdb->collate";
+ 
+        $sql = "
+                CREATE TABLE " . $db_table_name . " (
+                    id int(11) NOT NULL AUTO_INCREMENT,
+                    question varchar(255) DEFAULT NULL, 
+                    answer varchar(255) DEFAULT NULL,
+                    PRIMARY KEY (`id`)
+                ) $charset_collate;
+            ";
+        dbDelta( $sql );
+    }
 }
 
 /* Deletes the database field */
 function quizzcontest_remove() {
     delete_option('quizzcontest_data');
+    
+    /* Delete table */
+    global $wpdb;
+    $thetable = $wpdb->prefix."quizzcontest_qa";
+    $wpdb->query("DROP TABLE IF EXISTS $thetable");
 }
 
 /*
