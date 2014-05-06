@@ -84,7 +84,7 @@ function quizzcontest_insert_data() {
         'wp_quizzcontest_qa', 
         array( 
             'id' => 1, 
-            'question' => 'Quel est le créateur de Linux',
+            'question' => 'Quel est le créateur de Linux ?',
             'answer' => 'Linus Torvalds'
         ), 
         array( 
@@ -93,6 +93,37 @@ function quizzcontest_insert_data() {
             '%s', 
         ) 
     );
+
+    $wpdb->insert( 
+        'wp_quizzcontest_qa', 
+        array( 
+            'id' => 2, 
+            'question' => 'Qui est RMS ?',
+            'answer' => 'Richard M. Stallman'
+        ), 
+        array( 
+            '%d', 
+            '%s',
+            '%s', 
+        ) 
+    );
+
+    $wpdb->insert( 
+        'wp_quizzcontest_qa', 
+        array( 
+            'id' => 3, 
+            'question' => 'Quel est la commande qui permet de liste un répertoire ?',
+            'answer' => 'La commande ls'
+        ), 
+        array( 
+            '%d', 
+            '%s',
+            '%s', 
+        ) 
+    );
+
+
+
 }
 
 /* Deletes the database field */
@@ -130,6 +161,21 @@ function addHeader() {
 }
 add_action('wp_head', 'addHeader');
 
+
+/*
+
+*/
+
+function getQuestionById($id) {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'quizzcontest_qa';
+
+    $row = $wpdb->get_row( $wpdb->prepare('SELECT * FROM '.$table_name.' WHERE id = %d', $id) );
+
+    return $row;
+}
+
 /*
 Shortcut : [quizzcontest_shortcode]
 */
@@ -138,10 +184,17 @@ function displayQuizzContestShortCode() {
     $version = $quizzcontest_data["'version'"];
     $introduction = $quizzcontest_data["'introduction'"];
 
+    $random = rand(1,3);
+    $question =  getQuestionById($random);
+    $question = $question->question;
+
     $default_quizzcontest = "
         Le concours :  <br/>
-        Version : <span class='quizzcontest_title'> " . $version . " </span> <br/>
-        Introduction  : <span class='quizzcontest_title'> " . $introduction . " </span> <br/>
+        Version : <span class='quizzcontest_title'> $version  </span> <br/>
+        Introduction  : <span class='quizzcontest_title'> $introduction  </span> <br/>
+        <br/>
+        $question<br/>
+        <br/>
         Bonne chance !! <br/>
     ";
     return apply_filters('quizzcontest', $default_quizzcontest);
