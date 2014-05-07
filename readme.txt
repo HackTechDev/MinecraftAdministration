@@ -1,5 +1,5 @@
-Plugin Name: Ajouter une ligne de texte
-Plugin URI: http://steamcyberpunk.net/wpplugindev/quizzcontest
+Plugin Name: Quizz Contest
+Plugin URI: https://github.com/Nekrofage/WordpressPluginQuizzContest
 Description: Quizz contest
 Version: 0.1
 Author: Le Sanglier des Ardennes

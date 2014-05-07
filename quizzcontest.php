@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Quizz Contest
-Plugin URI: http://monsite.fr/plugins/quizzcontest
+Plugin URI: https://github.com/Nekrofage/WordpressPluginQuizzContest
 Description: Quizz contest
 Version: 0.1
 Author: Le Sanglier des Ardennes
