@@ -82,44 +82,20 @@ function quizzcontest_insert_data() {
 
     $wpdb->insert( 
         'wp_quizzcontest_qa', 
-        array( 
-            'id' => 1, 
-            'question' => 'Quel est le créateur de Linux ?',
-            'answer' => 'Linus Torvalds'
-        ), 
-        array( 
-            '%d', 
-            '%s',
-            '%s', 
-        ) 
+        array( 'id' => 1, 'question' => 'Quel est le créateur de Linux ?', 'answer' => 'Linus Torvalds'), 
+        array( '%d', '%s', '%s', ) 
     );
 
     $wpdb->insert( 
         'wp_quizzcontest_qa', 
-        array( 
-            'id' => 2, 
-            'question' => 'Qui est RMS ?',
-            'answer' => 'Richard M. Stallman'
-        ), 
-        array( 
-            '%d', 
-            '%s',
-            '%s', 
-        ) 
+        array( 'id' => 2, 'question' => 'Qui est RMS ?', 'answer' => 'Richard M. Stallman'), 
+        array( '%d', '%s', '%s', ) 
     );
 
     $wpdb->insert( 
         'wp_quizzcontest_qa', 
-        array( 
-            'id' => 3, 
-            'question' => 'Quel est la commande qui permet de liste un répertoire ?',
-            'answer' => 'La commande ls'
-        ), 
-        array( 
-            '%d', 
-            '%s',
-            '%s', 
-        ) 
+        array( 'id' => 3, 'question' => 'Quel est la commande qui permet de liste un répertoire ?', 'answer' => 'La commande ls'), 
+        array( '%d', '%s', '%s', ) 
     );
 
 }
@@ -137,15 +113,23 @@ function quizzcontest_remove() {
 /*
 Display administration page
 */
-if ( is_admin() ){
-    function quizzcontest_menu(){
+if ( is_admin() ) {
+
+    function quizzcontest_menu() {
          add_options_page('Quizz Contest', 'Quizz Contest', 'administrator', basename(__FILE__), 'quizzcontest_option');
+
+        add_menu_page('Quizz Contest', 'Quizz Contest', 'manage_options', 'listQuestionAnswer', 'listQuestionAnswer');
+        
+        add_submenu_page('quizzcontest_list', 'Add New QuestionAnswer', 'Add New', 'manage_options', 'createQuestionAnswer', 'createQuestionAnswer'); 
+        
+        //this submenu is HIDDEN, however, we need to add it anyways
+        add_submenu_page(null, 'Update QuestionAnswer', 'Update', 'manage_options', 'updateQuestionAnswer', 'updateQuestionAnswer');
+
     }
 
     add_action('admin_menu','quizzcontest_menu');
 
-    function quizzcontest_option(){
-        
+    function quizzcontest_option() {
         include('admin/quizzcontest_option.php');
     } 
 }
@@ -252,5 +236,11 @@ function quizzcontest_settings_link($links) {
  
 $plugin = plugin_basename(__FILE__); 
 add_filter("plugin_action_links_$plugin", 'quizzcontest_settings_link' );
+
+
+define('ROOTDIR', plugin_dir_path(__FILE__));
+require_once(ROOTDIR . 'listQuestionAnswer.php');
+require_once(ROOTDIR . 'createQuestionAnswer.php');
+require_once(ROOTDIR . 'updateQuestionAnswer.php');
 
 ?>
