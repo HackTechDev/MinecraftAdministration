@@ -122,8 +122,6 @@ function quizzcontest_insert_data() {
         ) 
     );
 
-
-
 }
 
 /* Deletes the database field */
@@ -163,7 +161,7 @@ add_action('wp_head', 'addHeader');
 
 
 /*
-
+Get question from db by id
 */
 
 function getQuestionById($id) {
@@ -177,29 +175,46 @@ function getQuestionById($id) {
 }
 
 /*
-Shortcut : [quizzcontest_shortcode]
+Shortcut : [quizzcontestintro_shortcode]
 */
-function displayQuizzContestShortCode() {
+function displayQuizzContestIntroShortCode() {
     $quizzcontest_data = get_option('quizzcontest_data');
     $version = $quizzcontest_data["'version'"];
     $introduction = $quizzcontest_data["'introduction'"];
-
-    $random = rand(1,3);
-    $question =  getQuestionById($random);
-    $question = $question->question;
 
     $default_quizzcontest = "
         Le concours :  <br/>
         Version : <span class='quizzcontest_title'> $version  </span> <br/>
         Introduction  : <span class='quizzcontest_title'> $introduction  </span> <br/>
         <br/>
-        $question<br/>
-        <br/>
         Bonne chance !! <br/>
     ";
     return apply_filters('quizzcontest', $default_quizzcontest);
 }
-add_shortcode( 'quizzcontest_shortcode', 'displayQuizzContestShortCode' );
+add_shortcode( 'quizzcontestintro_shortcode', 'displayQuizzContestIntroShortCode' );
+
+
+/*
+Shortcut : [quizzcontestquestion_shortcode id="<question id>"]
+*/
+function displayQuizzContestQuestionShortCode($id) {
+    extract(shortcode_atts(array(
+        'id' => 'id'
+    ), $id));
+
+    $question =  getQuestionById($id);
+    $question = $question->question;
+
+    $default_quizzcontest = "
+        $question
+    ";
+    return apply_filters('quizzcontest', $default_quizzcontest);
+}
+add_shortcode( 'quizzcontestquestion_shortcode', 'displayQuizzContestQuestionShortCode' );
+
+
+
+
 
 /*
  Display a notice on top of the dashboard
