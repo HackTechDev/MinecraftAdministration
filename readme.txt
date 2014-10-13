@@ -1,6 +1,6 @@
-Plugin Name: Quizz Contest
-Plugin URI: https://github.com/Nekrofage/WordpressPluginQuizzContest
-Description: Quizz contest
+Plugin Name: Minecraft Administration
+Plugin URI: https://github.com/Nekrofage/WordpressPluginMinecraftAdministration
+Description: Minecraft Administration
 Version: 0.1
 Author: Le Sanglier des Ardennes
 Author URI: http://steamcyberpunk.net/
