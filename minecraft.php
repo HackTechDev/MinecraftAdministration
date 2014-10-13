@@ -110,12 +110,12 @@ Display administration page
 if ( is_admin() ) {
 
     function minecraft_menu() {
-         add_options_page('Minecraft Administration', 'Minecraft Administration', 'administrator', basename(__FILE__), 'minecraft_option');
+
+        add_options_page('Minecraft Administration', 'Minecraft Administration', 'administrator', basename(__FILE__), 'minecraft_option');
 
         add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'listServer', 'listServer');
-        
-        add_submenu_page('minecraft_list', 'Create Server', 'Add New', 'manage_options', 'createServer', 'createServer'); 
-        
+        add_submenu_page('listServer', 'Create Server', 'Create Server', 'manage_options', 'createServer', 'createServer'); 
+ 
         //this submenu is HIDDEN, however, we need to add it anyways
         add_submenu_page(null, 'Update Server', 'Update', 'manage_options', 'updateServer', 'updateServer');
 
@@ -127,6 +127,8 @@ if ( is_admin() ) {
         include('admin/minecraft_option.php');
     } 
 }
+
+
 
 /*
 Add stylesheet and javascript in header
