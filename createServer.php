@@ -23,8 +23,8 @@ function createServer () {
                     <p>
                         <?php echo $message;?>
                     </p>
-                    <a href="<?php echo admin_url('admin.php?page=listServer')?>">&laquo; Back to server list</a>
                 </div>
+                <a href="<?php echo admin_url('admin.php?page=listServer')?>">&laquo; Back to server list</a>
             <?php endif;?>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
             <table class='wp-list-table widefat fixed'>
