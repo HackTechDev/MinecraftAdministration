@@ -1,9 +1,9 @@
-Wordpress Quizz Contest Plugin Template
-=======================================
+Wordpress Minecraft Administration Plugin
+=========================================
 
-Source code : https://github.com/Nekrofage/WordpressPluginQuizzContest
+Source code : https://github.com/Nekrofage/WordpressPluginMinecraftAdministration
 
-Description: Quizz contest
+Description: Minecraft Administration
 Version: 0.1
 Author: Le Sanglier des Ardennes
 Author URI: http://steamcyberpunk.net/
