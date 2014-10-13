@@ -113,8 +113,9 @@ if ( is_admin() ) {
 
         add_options_page('Minecraft Administration', 'Minecraft Administration', 'administrator', basename(__FILE__), 'minecraft_option');
 
-        add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'listServer', 'listServer');
-        add_submenu_page('listServer', 'Create Server', 'Create Server', 'manage_options', 'createServer', 'createServer'); 
+        add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'mcAdmin', 'mcAdmin_page');
+	add_submenu_page('mcAdmin', 'List Server', 'List Server', 'manage_options', 'listServer', 'listServer');
+        add_submenu_page('mcAdmin', 'Create Server', 'Create Server', 'manage_options', 'createServer', 'createServer'); 
  
         //this submenu is HIDDEN, however, we need to add it anyways
         add_submenu_page(null, 'Update Server', 'Update', 'manage_options', 'updateServer', 'updateServer');
@@ -128,8 +129,18 @@ if ( is_admin() ) {
     } 
 }
 
+function mcAdmin() {
+echo "<h2>Minecraft Administration</h2> ";
+}
 
-
+// mcAdmin_page() displays the page content
+function mcAdmin_page() {
+echo "</pre>
+<h2>Minecraft Administration</h2>
+<pre>
+";
+}
+ 
 /*
 Add stylesheet and javascript in header
 */
