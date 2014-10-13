@@ -245,8 +245,8 @@ add_filter("plugin_action_links_$plugin", 'minecraft_settings_link' );
 
 
 define('ROOTDIR', plugin_dir_path(__FILE__));
-require_once(ROOTDIR . 'listServer.php');
-require_once(ROOTDIR . 'createServer.php');
-require_once(ROOTDIR . 'updateServer.php');
+require_once(ROOTDIR . 'server/listServer.php');
+require_once(ROOTDIR . 'server/createServer.php');
+require_once(ROOTDIR . 'server/updateServer.php');
 
 ?>
