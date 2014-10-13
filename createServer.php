@@ -23,6 +23,7 @@ function createServer () {
                     <p>
                         <?php echo $message;?>
                     </p>
+                    <a href="<?php echo admin_url('admin.php?page=listServer')?>">&laquo; Back to server list</a>
                 </div>
             <?php endif;?>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
