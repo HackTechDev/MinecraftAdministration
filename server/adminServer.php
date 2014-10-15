@@ -31,8 +31,9 @@ function adminServer () {
 	<?php echo $host; ?>&nbsp;
 	<?php echo $status; ?>&nbsp;
 	<?php echo $version; ?>&nbsp;
-	<?php echo $adminurl; ?>&nbsp;
-
+	<br/>
+	Direct url: <?php echo $adminurl; ?>&nbsp;<br/>
+	 <iframe src="<?php echo $adminurl; ?>" width="100%" height="800px"></iframe> 
     </div>
 <?php
 }
