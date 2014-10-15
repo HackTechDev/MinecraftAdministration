@@ -24,7 +24,10 @@ function listServer () {
         echo "<td>$row->player</td>"; 
 
 
-        echo "<td><a href='" . admin_url('admin.php?page=updateServer&id=' . $row->id) . "'>Update</a></td>";
+        echo "<td>
+		<a href='" . admin_url('admin.php?page=viewServer&id=' . $row->id) . "'>View</a>|
+		<a href='" . admin_url('admin.php?page=updateServer&id=' . $row->id) . "'>Update</a>
+		</td>";
         echo "</tr>";}
     echo "</table>";
     ?>
