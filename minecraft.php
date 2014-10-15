@@ -65,8 +65,22 @@ function minecraft_install() {
         $sql = "
                 CREATE TABLE " . $db_table_name . " (
                     id int(11) NOT NULL AUTO_INCREMENT,
-                    server varchar(255) DEFAULT NULL, 
-                    link varchar(255) DEFAULT NULL,
+                    name varchar(255) DEFAULT NULL, 
+                    description varchar(255) DEFAULT NULL,
+                    host varchar(255) DEFAULT NULL,
+                    status int(1) DEFAULT NULL,
+                    version varchar(255) DEFAULT NULL,
+                    sshurl varchar(255) DEFAULT NULL,
+                    sshlogin varchar(255) DEFAULT NULL,
+                    sshpassword varchar(255) DEFAULT NULL,                   
+                    adminurl varchar(255) DEFAULT NULL,
+                    adminlogin varchar(255) DEFAULT NULL,
+                    adminpassword varchar(255) DEFAULT NULL,                   
+                    audiochaturl varchar(255) DEFAULT NULL,
+                    audiochatlogin varchar(255) DEFAULT NULL,
+                    audiochatpassword varchar(255) DEFAULT NULL,                   
+                    plugin int(3) DEFAULT NULL,
+                    player int(3) DEFAULT NULL,
                     PRIMARY KEY (`id`)
                 ) $charset_collate;
             ";
@@ -82,14 +96,34 @@ function minecraft_insert_data() {
 
     $wpdb->insert( 
         'wp_minecraft', 
-        array( 'id' => 1, 'server' => 'Vanilla', 'link' => 'http://vanilla'), 
-        array( '%d', '%s', '%s', ) 
-    );
+        array(  'id' => 1, 
+                'name' => 'Vanilla', 
+                'description' => '',
+                'host' => 'http://192.168.1.1',
+                'status' => '',
+                'version' => '',
 
-    $wpdb->insert( 
-        'wp_minecraft', 
-        array( 'id' => 2, 'server' => 'Craftbukkit', 'link' => 'http://craftbukkit'), 
-        array( '%d', '%s', '%s', ) 
+                'sshurl' => '',
+                'sshlogin' => '',
+                'sshpassword' => '',
+
+                'adminurl' => '',
+                'adminlogin' => '',
+                'adminpassword' => '',
+
+                'audiochaturl' => '',
+                'audiochatlogin' => '',
+                'audiochatpassword' => '',
+
+                'plugin' => '',
+                'player' => ''
+                ), 
+        array(  '%d', '%s', '%s', '%s' , '%d', '%s',
+                '%s', '%s', '%s' ,
+                '%s', '%s', '%s' ,
+                '%s', '%s', '%s' ,
+                '%d', '%d'
+              ) 
     );
 
 }
@@ -171,12 +205,12 @@ Shortcut : [minecraftintro_shortcode]
 function displayMinecraftAdministrationIntroShortCode() {
     $minecraft_data = get_option('minecraft_data');
     $version = $minecraft_data["'version'"];
-    $introduction = $minecraft_data["'introduction'"];
+    $description = $minecraft_data["'description'"];
 
     $default_minecraft = "
         Minecraft Administration  <br/>
         Version : <span class='minecraft_title'> $version  </span> <br/>
-        Introduction  : <span class='minecraft_title'> $introduction  </span> <br/>
+        Introduction  : <span class='minecraft_title'> $description  </span> <br/>
         <br/>
     ";
     return apply_filters('minecraft', $default_minecraft);
@@ -193,7 +227,7 @@ function displayMinecraftServerShortCode($id) {
     ), $id));
 
     $server =  getServerById($id);
-    $server = $server->server;
+    $server = $server->name;
 
     $default_minecraft = "
         $server
