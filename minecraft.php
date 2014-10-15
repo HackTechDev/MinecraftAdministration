@@ -97,7 +97,7 @@ function minecraft_insert_data() {
     $wpdb->insert( 
         'wp_minecraft', 
         array(  'id' => 1, 
-                'name' => 'Vanilla', 
+                'name' => 'Minecraft', 
                 'description' => '',
                 'host' => 'http://192.168.1.1',
                 'status' => '',
@@ -147,7 +147,7 @@ if ( is_admin() ) {
 
         add_options_page('Minecraft Administration', 'Minecraft Administration', 'administrator', basename(__FILE__), 'minecraft_option');
 
-        add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'mcAdmin', 'mcAdmin_page');
+        add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'mcAdmin', 'mcAdmin_page', plugins_url('MinecraftAdministration/image/icon.png'));
 	add_submenu_page('mcAdmin', 'List Server', 'List Server', 'manage_options', 'listServer', 'listServer');
         add_submenu_page('mcAdmin', 'Create Server', 'Create Server', 'manage_options', 'createServer', 'createServer'); 
  
