@@ -10,7 +10,7 @@ function listServer () {
     $rows = $wpdb->get_results("SELECT id, name, description, host, status, adminurl, nbplayer, maxplayer from wp_minecraft");
     echo "<table class='wp-list-table widefat fixed'>";
     echo "<tr><th>id</th>
-        <th>name</th><th>description</th><th>host</th><th>status</th><th>player</th><th>admin</th><th>map</th>
+        <th>name</th><th>description</th><th>host</th><th>status</th><th>player</th><th>admin</th><th>map</th><th>editor</th>
         <th>&nbsp;</th></tr>";
     foreach ($rows as $row ){
         echo "<tr>";
@@ -22,6 +22,7 @@ function listServer () {
         echo "<td>$row->nbplayer/$row->maxplayer</td>";
 	echo "<td><a href=\"/wp-admin/admin.php?page=adminServer&id=" . $row->id . "\">" . $row->adminurl . "</td>";
 	echo "<td><a href=\"/wp-admin/admin.php?page=mapServer&id=" . $row->id . "\">" . $row->adminurl . "</td>"; 
+	echo "<td><a href=\"/wp-admin/admin.php?page=editorServer&id=" . $row->id . "\">" . $row->adminurl . "</td>";
 
         echo "<td>
 		<a href='" . admin_url('admin.php?page=viewServer&id=' . $row->id) . "'>View</a>|
