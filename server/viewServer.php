@@ -1,4 +1,5 @@
 <?php
+
 function viewServer () {
     global $wpdb;
     $id = $_GET["id"];
@@ -32,6 +33,7 @@ function viewServer () {
             $player = $server->player;
 
     }
+
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
     <div class="wrap">
@@ -49,7 +51,7 @@ function viewServer () {
                 <tr>
                     <th>Description</th>
                     <td>
-                        <input type="text" name="description" value="<?php echo $description;?>" readonly />
+			<textarea rows="4" cols="50" name="description" readonly><?php echo $description;?></textarea>
                     </td>
                 </tr>
                 <tr>

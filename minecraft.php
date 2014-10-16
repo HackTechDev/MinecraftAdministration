@@ -9,6 +9,10 @@ Author URI: http://steamcyberpunk.net/
 License: GPL2 license
 */
 
+include ("lib/MinecraftQuery/MinecraftApiClient.php");
+include ("lib/MinecraftQuery/MinecraftQueryServer.php");
+
+
 /*
 Copyright 2014  Le Sanglier des Ardennes  (email : lesanglierdesardennes@gmail.com)
 
@@ -25,6 +29,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
 /*
 Initialize/install or uninstall
 */

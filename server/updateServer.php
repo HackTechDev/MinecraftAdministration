@@ -64,6 +64,18 @@ function updateServer () {
 
         }
     }
+
+
+        $mcclient = new MinecraftApiClient($host);
+        $mcserver = $mcclient->call();
+	$nbplugin = (int)count($mcserver["plugins"]);
+        $version = $mcserver["server"]["version"]["name"];
+
+	$description = "";
+	foreach($mcserver["plugins"] as $plugin) {
+		$description .= $plugin["name"] . "\n";
+	}
+
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
     <div class="wrap">
@@ -90,7 +102,7 @@ function updateServer () {
                 <tr>
                     <th>Description</th>
                     <td>
-                        <input type="text" name="description" value="<?php echo $description;?>"/>
+<textarea rows="4" cols="50" name="description"><?php echo $description;?></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -175,7 +187,7 @@ function updateServer () {
                 <tr>
                     <th>Plugin</th>
                     <td>
-                        <input type="text" name="plugin" value="<?php echo $plugin;?>"/>
+                        <input type="text" name="plugin" value="<?php echo $nbplugin;?>"/>
                     </td>
                 </tr>
                 <tr>
