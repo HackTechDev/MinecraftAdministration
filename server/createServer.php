@@ -28,7 +28,7 @@ function createServer () {
                     'sshurl' => $sshurl, 'sshlogin' => $sshlogin, 'sshpassword' => $sshpassword,
                     'adminurl' => $adminurl, 'adminlogin' => $adminlogin, 'adminpassword' => $adminpassword,
                     'audiochaturl' => $audiochaturl, 'audiochatlogin' => $audiochatlogin, 'audiochatpassword' => $audiochatpassword, 
-                    'nbplugin' => $nbplugin, 'listplugin' => $listplugin
+                    'nbplugin' => $nbplugin, 'listplugin' => $listplugin,
                     'nbplayer' => $nbplayer, 'maxplayer' => $maxplayer
                   ),
             array(  '%s', '%s' , '%s' , '%d', '%s',

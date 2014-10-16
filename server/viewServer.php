@@ -8,7 +8,8 @@ function viewServer () {
         sshurl, sshlogin, sshpassword,
         adminurl, adminlogin, adminpassword,
         audiochaturl, audiochatlogin, audiochatpassword,
-        plugin, player
+        nbplugin, listplugin,
+	nbplayer, maxplayer
         from wp_minecraft where id=%s",$id));
         foreach ($servers as $server ) {
             $name = $server->name;
