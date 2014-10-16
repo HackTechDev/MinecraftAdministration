@@ -33,31 +33,9 @@ function editorServer () {
 	<?php echo $version; ?>&nbsp;
 	<br/>
 	Direct url: <?php echo $adminurl; ?>&nbsp;<br/>
+
+	<iframe src="/wp-content/plugins/MinecraftAdministration/server/script.php" width="100%" height="400px">
     </div>
 <?php
-
-$param1 = "first";
-$param2 = "second";
-$param3 = "third";
- 
-$script = "/home/minecraft/MINECRAFT/MCPI/mcdev/pillar.py";
-
-echo "<br/>" . $script . "<br/>";
-
-$command = "python " . $script;
-$command .= " $param1 $param2 $param3 2>&1";
-
- 
-$pid = popen( $command,"r");
- 
-while( !feof( $pid ) ) {
- echo fread($pid, 256);
- flush();
- ob_flush();
- usleep(100000);
-}
-pclose($pid);
-
-
 }
 ?>
