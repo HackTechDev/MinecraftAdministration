@@ -9,8 +9,13 @@ Author: Le Sanglier des Ardennes
 Author URI: http://steamcyberpunk.net/
 License: GPL2 license
 
-Functionnalities
-================
+Minecraft
+=========
+
+- Page view/admin server
+
+Plugin
+======
 
 - Plugin initialisation (install and uninstall)
 
@@ -18,10 +23,9 @@ Functionnalities
 - Option page
 - CRUD options/settings
 - Options in array format 
-
 - CRUD for custom table
 - Plugin menu for the custom table
-
 - Shortcut with and without parameters
-
 - CSS and Javascript in the header
+- Custom icon
+
