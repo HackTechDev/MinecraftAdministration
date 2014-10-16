@@ -165,6 +165,7 @@ if ( is_admin() ) {
         add_submenu_page(null, 'Update Server', 'Update', 'manage_options', 'updateServer', 'updateServer');
         add_submenu_page(null, 'View Server', 'View', 'manage_options', 'viewServer', 'viewServer');
         add_submenu_page(null, 'Admin Server', 'Admin', 'manage_options', 'adminServer', 'adminServer');
+        add_submenu_page(null, 'Map Server', 'Map', 'manage_options', 'mapServer', 'mapServer');
 
     }
 
@@ -296,6 +297,7 @@ require_once(ROOTDIR . 'server/createServer.php');
 require_once(ROOTDIR . 'server/updateServer.php');
 require_once(ROOTDIR . 'server/viewServer.php');
 require_once(ROOTDIR . 'server/adminServer.php');
+require_once(ROOTDIR . 'server/mapServer.php');
 
 
 ?>

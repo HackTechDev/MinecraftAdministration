@@ -21,7 +21,7 @@ function listServer () {
         echo "<td>$row->status</td>";
         echo "<td>$row->nbplayer/$row->maxplayer</td>";
 	echo "<td><a href=\"/wp-admin/admin.php?page=adminServer&id=" . $row->id . "\">" . $row->adminurl . "</td>";
-	echo "<td>map</td>"; 
+	echo "<td><a href=\"/wp-admin/admin.php?page=mapServer&id=" . $row->id . "\">" . $row->adminurl . "</td>"; 
 
         echo "<td>
 		<a href='" . admin_url('admin.php?page=viewServer&id=' . $row->id) . "'>View</a>|
