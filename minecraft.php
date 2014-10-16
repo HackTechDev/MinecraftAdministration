@@ -84,8 +84,10 @@ function minecraft_install() {
                     audiochaturl varchar(255) DEFAULT NULL,
                     audiochatlogin varchar(255) DEFAULT NULL,
                     audiochatpassword varchar(255) DEFAULT NULL,                   
-                    plugin int(3) DEFAULT NULL,
-                    player int(3) DEFAULT NULL,
+                    nbplugin int(3) DEFAULT NULL,
+                    listplugin varchar(255) DEFAULT NULL,
+                    nbplayer int(3) DEFAULT NULL,
+                    maxplayer int(3) DEFAULT NULL,
                     PRIMARY KEY (`id`)
                 ) $charset_collate;
             ";
@@ -120,13 +122,16 @@ function minecraft_insert_data() {
                 'audiochatlogin' => '',
                 'audiochatpassword' => '',
 
-                'plugin' => '',
-                'player' => ''
+                'nbplugin' => '',
+                'listplugin' => '',
+                'nbplayer' => '',
+                'maxplayer' => ''
                 ), 
         array(  '%d', '%s', '%s', '%s' , '%d', '%s',
                 '%s', '%s', '%s' ,
                 '%s', '%s', '%s' ,
                 '%s', '%s', '%s' ,
+                '%d', '%s',
                 '%d', '%d'
               ) 
     );

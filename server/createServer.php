@@ -15,8 +15,10 @@ function createServer () {
     $audiochaturl = $_POST["audiochaturl"];
     $audiochatlogin = $_POST["audiochatlogin"];
     $audiochatpassword = $_POST["audiochatpassword"];
-    $plugin = $_POST["plugin"];
-    $player = $_POST["player"];
+    $nbplugin = $_POST["nbplugin"];
+    $listplugin = $_POST["listplugin"];
+    $nbplayer = $_POST["nbplayer"];
+    $maxplayer = $_POST["maxplayer"];
 
     if(isset($_POST['insert'])){
         global $wpdb;
@@ -26,12 +28,14 @@ function createServer () {
                     'sshurl' => $sshurl, 'sshlogin' => $sshlogin, 'sshpassword' => $sshpassword,
                     'adminurl' => $adminurl, 'adminlogin' => $adminlogin, 'adminpassword' => $adminpassword,
                     'audiochaturl' => $audiochaturl, 'audiochatlogin' => $audiochatlogin, 'audiochatpassword' => $audiochatpassword, 
-                    'plugin' => $plugin, 'player' => $player
+                    'nbplugin' => $nbplugin, 'listplugin' => $listplugin
+                    'nbplayer' => $nbplayer, 'maxplayer' => $maxplayer
                   ),
             array(  '%s', '%s' , '%s' , '%d', '%s',
                     '%s', '%s', '%s' ,
                     '%s', '%s', '%s' ,
                     '%s', '%s', '%s' ,
+                    '%d', '%s',
                     '%d', '%d'
 		)
         );
@@ -61,7 +65,7 @@ function createServer () {
                 <tr>
                     <th>Description</th>
                     <td>
-                        <input type="text" name="link" value="<?php echo $description;?>"/>
+                        <input type="text" name="description" value="<?php echo $description;?>"/>
                     </td>
                 </tr>
 
@@ -142,6 +146,36 @@ function createServer () {
                         <input type="text" name="audiochatpassword" value="<?php echo $audiochatpassword;?>"/>
                     </td>
                 </tr>
+
+
+                 <tr>
+                    <th>Nb plugin</th>
+                    <td>
+                        <input type="text" name="nbplugin" value="<?php echo $nbplugin;?>"/>
+                    </td>
+                </tr>
+ 
+                 <tr>
+                    <th>List plugin</th>
+                    <td>
+<textarea rows="4" cols="50" name="listplugin"><?php echo $listplugin;?></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Nb player</th>
+                    <td>
+                        <input type="text" name="nbplayer" value="<?php echo $nbplayer;?>"/>
+                    </td>
+                </tr>
+                 <tr>
+                    <th>Max player</th>
+                    <td>
+                        <input type="text" name="maxplayer" value="<?php echo $maxplayer;?>"/>
+                    </td>
+                </tr>
+
+
+
 
             </table>
             <input type='submit' name="insert" value='Save' class='button'>

@@ -29,8 +29,11 @@ function viewServer () {
             $audiochatlogin = $server->audiochatlogin;
             $audiochatpassword = $server->audiochatpassword;
 
-            $plugin = $server->plugin;
-            $player = $server->player;
+            $nbplugin = $server->nbplugin;
+            $listplugin = $server->listplugin;
+
+            $nbplayer = $server->nbplayer;
+            $maxplayer = $server->maxplayer;
 
     }
 
@@ -135,15 +138,30 @@ function viewServer () {
                 </tr>
 
                 <tr>
-                    <th>Plugin</th>
+                    <th>Nb Plugin</th>
                     <td>
-                        <input type="text" name="plugin" value="<?php echo $plugin;?>" readonly />
+                        <input type="text" name="nbplugin" value="<?php echo $nbplugin;?>" readonly />
                     </td>
                 </tr>
                 <tr>
-                    <th>Player</th>
+                    <th>List Plugin</th>
                     <td>
-                        <input type="text" name="player" value="<?php echo $player;?>" readonly />
+<textarea rows="4" cols="50" name="listplugin" readonly><?php echo $listplugin;?></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Nb Player</th>
+                    <td>
+                        <input type="text" name="nbplayer" value="<?php echo $nbplayer;?>" readonly />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>Max Player</th>
+                    <td>
+                        <input type="text" name="maxplayer" value="<?php echo $maxplayer;?>" readonly />
                     </td>
                 </tr>
 

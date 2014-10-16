@@ -16,8 +16,12 @@ function updateServer () {
     $audiochaturl = $_POST["audiochaturl"];
     $audiochatlogin = $_POST["audiochatlogin"];
     $audiochatpassword = $_POST["audiochatpassword"];
-    $plugin = $_POST["plugin"];
-    $player = $_POST["player"];
+    $nbplugin = $_POST["nbplugin"];
+    $listplugin = $_POST["listplugin"];
+
+    $nbplayer = $_POST["nbplayer"];
+    $maxplayer = $_POST["maxplayer"];
+
     if(isset($_POST['update'])) {	
         
         $wpdb->update( $wpdb->prefix . 'minecraft',
@@ -25,7 +29,8 @@ function updateServer () {
                     'sshurl' => $sshurl, 'sshlogin' => $sshlogin, 'sshpassword' => $sshpassword,
                     'adminurl' => $adminurl, 'adminlogin' => $adminlogin, 'adminpassword' => $adminpassword,
                     'audiochaturl' => $audiochaturl, 'audiochatlogin' => $audiochatlogin, 'audiochatpassword' => $audiochatpassword, 
-                    'plugin' => $plugin, 'player' => $player
+                    'nbplugin' => $nbplugin, 'listplugin' => $listplugin,
+                    'nbplayer' => $nbplayer, 'maxplayer' => $maxplayer
                     ), 
             array( 'id' => $id )
         );	
@@ -38,7 +43,8 @@ function updateServer () {
         sshurl, sshlogin, sshpassword,
         adminurl, adminlogin, adminpassword,
         audiochaturl, audiochatlogin, audiochatpassword,
-        plugin, player
+        nbplugin, listplugin,
+        nbplayer, maxplayer
         from wp_minecraft where id=%s",$id));
         foreach ($servers as $server ) {
             $name = $server->name;
@@ -59,8 +65,11 @@ function updateServer () {
             $audiochatlogin = $server->audiochatlogin;
             $audiochatpassword = $server->audiochatpassword;
 
-            $plugin = $server->plugin;
-            $player = $server->player;
+            $nbplugin = $server->nbplugin;
+            $listplugin = $server->listplugin;
+
+            $nbplayer = $server->nbplayer;
+            $maxplayer = $server->maxplayer;
 
         }
     }
@@ -71,9 +80,9 @@ function updateServer () {
 	$nbplugin = (int)count($mcserver["plugins"]);
         $version = $mcserver["server"]["version"]["name"];
 
-	$description = "";
+	$listplugin= "";
 	foreach($mcserver["plugins"] as $plugin) {
-		$description .= $plugin["name"] . "\n";
+		$listplugin .= $plugin["name"] . "\n";
 	}
 
     ?>
@@ -185,19 +194,33 @@ function updateServer () {
                 </tr>
 
                 <tr>
-                    <th>Plugin</th>
+                    <th>Nb Plugin</th>
                     <td>
-                        <input type="text" name="plugin" value="<?php echo $nbplugin;?>"/>
+                        <input type="text" name="nbplugin" value="<?php echo $nbplugin;?>"/>
                     </td>
                 </tr>
                 <tr>
-                    <th>Player</th>
+                    <th>List Plugin</th>
                     <td>
-                        <input type="text" name="player" value="<?php echo $player;?>"/>
+<textarea rows="4" cols="50" name="listplugin"><?php echo $listplugin;?></textarea>
                     </td>
                 </tr>
 
 
+                <tr>
+                    <th>Nb Player</th>
+                    <td>
+                        <input type="text" name="nbplayer" value="<?php echo $nbplayer;?>"/>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>Max Player</th>
+                    <td>
+                        <input type="text" name="maxplayer" value="<?php echo $maxplayer;?>"/>
+                    </td>
+                </tr
 
 
             </table>

@@ -7,7 +7,7 @@ function listServer () {
             <a href="<?php echo admin_url('admin.php?page=createServer'); ?>">Create a server</a>
     <?php
     global $wpdb;
-    $rows = $wpdb->get_results("SELECT id, name, description, host, status, plugin, player from wp_minecraft");
+    $rows = $wpdb->get_results("SELECT id, name, description, host, status, nbplayer, maxplayer from wp_minecraft");
     echo "<table class='wp-list-table widefat fixed'>";
     echo "<tr><th>id</th>
         <th>name</th><th>description</th><th>host</th><th>status</th>
@@ -20,8 +20,8 @@ function listServer () {
         echo "<td>$row->description</td>"; 
         echo "<td>$row->host</td>";	
         echo "<td>$row->status</td>";
-        echo "<td>$row->plugin</td>";
-        echo "<td>$row->player</td>"; 
+        echo "<td>$row->nbplayer</td>";
+        echo "<td>$row->maxplayer</td>"; 
 
 
         echo "<td>
