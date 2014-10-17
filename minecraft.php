@@ -172,9 +172,9 @@ if ( is_admin() ) {
 
         add_options_page('Minecraft Administration', 'Minecraft Administration', 'administrator', basename(__FILE__), 'minecraft_option');
 
-        add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'mcAdmin', 'mcAdmin_page', plugins_url('MinecraftAdministration/image/icon.png'));
-	add_submenu_page('mcAdmin', 'List Server', 'List Server', 'manage_options', 'listServer', 'listServer');
-        add_submenu_page('mcAdmin', 'Create Server', 'Create Server', 'manage_options', 'createServer', 'createServer'); 
+        add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'mcAdminHomepage', 'mcAdminHomepage', plugins_url('MinecraftAdministration/image/icon.png'));
+	add_submenu_page('mcAdminHomepage', 'List Server', 'List Server', 'manage_options', 'listServer', 'listServer');
+        add_submenu_page('mcAdminHomepage', 'Create Server', 'Create Server', 'manage_options', 'createServer', 'createServer'); 
  
         //this submenu is HIDDEN, however, we need to add it anyways
         add_submenu_page(null, 'Update Server', 'Update', 'manage_options', 'updateServer', 'updateServer');
@@ -308,6 +308,7 @@ add_filter("plugin_action_links_$plugin", 'minecraft_settings_link' );
 
 
 define('ROOTDIR', plugin_dir_path(__FILE__));
+require_once(ROOTDIR . 'mcAdminHomepage.php');
 require_once(ROOTDIR . 'server/listServer.php');
 require_once(ROOTDIR . 'server/createServer.php');
 require_once(ROOTDIR . 'server/updateServer.php');
