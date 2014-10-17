@@ -108,7 +108,7 @@ function minecraft_insert_data() {
     $wpdb->insert( 
         'wp_minecraft', 
         array(  'id' => 1, 
-                'name' => 'Minecraft Spigot Server', 
+                'name' => 'Minecraft Spigot', 
                 'description' => '',
                 'host' => '37.59.41.122',
                 'status' => '',
@@ -126,7 +126,7 @@ function minecraft_insert_data() {
                 'audiochatlogin' => '',
                 'audiochatpassword' => '',
 
-		'mapurl' => '/mapmc',
+		'mapurl' => '/mcmap',
 		'editorurl' => 'script.php',
 
                 'nbplugin' => '',
