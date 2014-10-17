@@ -127,12 +127,13 @@ function minecraft_insert_data() {
                 'audiochatpassword' => '',
 
 		'mapurl' => '/mapmc',
-		'editorurl => 'script.php',
+		'editorurl' => 'script.php',
 
                 'nbplugin' => '',
                 'listplugin' => '',
                 'nbplayer' => '',
                 'maxplayer' => '',
+
 		'createdon' => '',
 		'updatedon' => ''
                 ), 
@@ -140,8 +141,12 @@ function minecraft_insert_data() {
                 '%s', '%s', '%s' ,
                 '%s', '%s', '%s' ,
                 '%s', '%s', '%s' ,
+		
+		'%s', '%s',
+
                 '%d', '%s',
                 '%d', '%d',
+
 		'%d', '%d'
               ) 
     );
