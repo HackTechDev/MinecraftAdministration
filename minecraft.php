@@ -108,9 +108,9 @@ function minecraft_insert_data() {
     $wpdb->insert( 
         'wp_minecraft', 
         array(  'id' => 1, 
-                'name' => 'Minecraft', 
+                'name' => 'Minecraft Spigot Server', 
                 'description' => '',
-                'host' => 'http://192.168.1.1',
+                'host' => '37.59.41.122',
                 'status' => '',
                 'version' => '',
 
@@ -118,7 +118,7 @@ function minecraft_insert_data() {
                 'sshlogin' => '',
                 'sshpassword' => '',
 
-                'adminurl' => '192.168.1.1',
+                'adminurl' => 'http://37.59.41.122:25000/',
                 'adminlogin' => '',
                 'adminpassword' => '',
 
