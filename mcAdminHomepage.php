@@ -5,7 +5,7 @@ function mcAdminHomepage () {
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
     <div class="wrap">
-    <h2>Minecraft Server Administration</h2>
+    <h2>Minecraft Server Administration Panel</h2>
 
 
 
@@ -30,29 +30,35 @@ function mcAdminHomepage () {
          <div class="welcome-panel-column welcome-panel-last">
             <h4>Advanced Action</h4>
             <ul>
-               <li><a href="#" class="welcome-icon welcome-learn-more">Edit the map</a></li>
+               <li><a href="#" class="welcome-icon welcome-learn-more">Edit the map with Python script</a></li>
             </ul>
          </div>
       </div>
    </div>
 </div>
 
-<!--
+
+
+
+
 <div id="dashboard-widgets-wrap">
    <div id="dashboard-widgets" class="metabox-holder">
+
       <div id="postbox-container-1" class="postbox-container">
          <div id="normal-sortables" class="meta-box-sortables ui-sortable">
+
             <div id="dashboard_right_now" class="postbox ">
-               <h3 class="hndle"><span>D’un coup d’œil</span></h3>
+               <h3 class="hndle"><span>In-game screenshot</span></h3>
                <div class="inside">
                   <div class="main">
-                     <ul>
-                        <li class="post-count"><a href="edit.php?post_type=post">3 articles</a></li>
-                     </ul>
-                     <p id="wp-version-message">WordPress 4.0 avec le thème <a href="themes.php">Twenty Twelve</a>.</p>
+                     <p id="wp-version-message">My Minecraft World</a>.</p>
+		     <img src="/wp-content/uploads/2014/10/output-300x227.png">
                   </div>
                </div>
             </div>
+
+
+	    <!--
             <div id="dashboard_activity" class="postbox ">
                <h3 class="hndle"><span>Activité</span></h3>
                <div class="inside">
@@ -68,8 +74,12 @@ function mcAdminHomepage () {
                   </div>
                </div>
             </div>
+	    -->
+
          </div>
       </div>
+
+<!--
       <div id="postbox-container-2" class="postbox-container">
          <div id="side-sortables" class="meta-box-sortables ui-sortable">
             <div id="dashboard_primary" class="postbox ">
@@ -99,41 +109,12 @@ function mcAdminHomepage () {
             </div>
          </div>
       </div>
-      <div id="postbox-container-3" class="postbox-container">
-         <div id="column3-sortables" class="meta-box-sortables ui-sortable">
-            <div id="dashboard_quick_press" class="postbox closed">
-               <h3 class="hndle"><span><span class="hide-if-no-js">Brouillon rapide</span> <span class="hide-if-js">Brouillons</span></span></h3>
-               <div class="inside">
-                  <form name="post" action="http://nekrocite.info/wp-admin/post.php" method="post" id="quick-press" class="initial-form hide-if-no-js">
-                     <div class="input-text-wrap" id="title-wrap">
-                        <label class="prompt" for="title" id="title-prompt-text">
-                        Titre			</label>
-                        <input type="text" name="post_title" id="title" autocomplete="off">
-                     </div>
-                     <div class="textarea-wrap" id="description-wrap">
-                        <label class="prompt" for="content" id="content-prompt-text">Qu’avez-vous en tête&nbsp;?</label>
-                        <textarea name="content" id="content" class="mceEditor" rows="3" cols="15" autocomplete="off"></textarea>
-                     </div>
-                  </form>
-                  <div class="drafts">
-                     <h4 class="hide-if-no-js">Brouillons</h4>
-                     <ul>
-                        <li>
-                           <div class="draft-title"><a href="http://nekrocite.info/wp-admin/post.php?post=19&amp;action=edit" title="Modifier avec «&nbsp;Carte Minecraft&nbsp;»">Carte Minecraft</a><time datetime="2014-10-12T16:56:29+00:00">12 octobre 2014</time></div>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div id="postbox-container-4" class="postbox-container">
-         <div id="column4-sortables" class="meta-box-sortables ui-sortable empty-container"></div>
-      </div>
+-->
+
+
    </div>
 </div>
 
--->
 
 
 
