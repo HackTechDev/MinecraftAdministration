@@ -11,7 +11,7 @@ function viewServer () {
 	mapurl, editorurl,
         nbplugin, listplugin,
 	nbplayer, maxplayer,
-	created_on, updated_on
+	createdon, updatedon
         from wp_minecraft where id=%s",$id));
         foreach ($servers as $server ) {
             $name = $server->name;
