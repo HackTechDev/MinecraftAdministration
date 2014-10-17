@@ -8,8 +8,10 @@ function viewServer () {
         sshurl, sshlogin, sshpassword,
         adminurl, adminlogin, adminpassword,
         audiochaturl, audiochatlogin, audiochatpassword,
+	mapurl, editorurl,
         nbplugin, listplugin,
-	nbplayer, maxplayer
+	nbplayer, maxplayer,
+	created_on, updated_on
         from wp_minecraft where id=%s",$id));
         foreach ($servers as $server ) {
             $name = $server->name;
@@ -30,12 +32,18 @@ function viewServer () {
             $audiochatlogin = $server->audiochatlogin;
             $audiochatpassword = $server->audiochatpassword;
 
+ 	    $mapurl = $server->mapurl;
+            $editorurl = $server->editorurl;
+
+
             $nbplugin = $server->nbplugin;
             $listplugin = $server->listplugin;
 
             $nbplayer = $server->nbplayer;
             $maxplayer = $server->maxplayer;
-
+	     
+	    $createdon = $server->createdon;
+	    $updatedon = $server->updatedon;
     }
 
     ?>
@@ -138,6 +146,25 @@ function viewServer () {
                     </td>
                 </tr>
 
+
+                <tr>
+                    <th>Map url</th>
+                    <td>
+                        <input type="text" name="mapurl" value="<?php echo $mapurl;?>" readonly />
+			<a href="/wp-admin/admin.php?page=mapServer&id=<?php echo $id; ?>">Go to</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Editor url</th>
+                    <td>
+                        <input type="text" name="editorurl" value="<?php echo $editorurl;?>" readonly />
+			<a href="/wp-admin/admin.php?page=editorServer&id=<?php echo $id; ?>">Go to</a>
+                    </td>
+                </tr>
+
+
+
                 <tr>
                     <th>Nb Plugin</th>
                     <td>
@@ -163,6 +190,22 @@ function viewServer () {
                     <th>Max Player</th>
                     <td>
                         <input type="text" name="maxplayer" value="<?php echo $maxplayer;?>" readonly />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>Created on</th>
+                    <td>
+                        <input type="text" name="createdon" value="<?php echo $createdon; ?>" readonly />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>Updated on</th>
+                    <td>
+                        <input type="text" name="updatedon" value="<?php echo $updatedon;?>" readonly />
                     </td>
                 </tr>
 

@@ -7,7 +7,7 @@ function listServer () {
             <a href="<?php echo admin_url('admin.php?page=createServer'); ?>">Create a server</a>
     <?php
     global $wpdb;
-    $rows = $wpdb->get_results("SELECT id, name, description, host, status, adminurl, nbplayer, maxplayer from wp_minecraft");
+    $rows = $wpdb->get_results("SELECT id, name, description, host, status, adminurl, mapurl, editorurl, nbplayer, maxplayer from wp_minecraft");
     echo "<table class='wp-list-table widefat fixed'>";
     echo "<tr><th>id</th>
         <th>name</th><th>description</th><th>host</th><th>status</th><th>player</th><th>admin</th><th>map</th><th>editor</th>
@@ -21,8 +21,8 @@ function listServer () {
         echo "<td>$row->status</td>";
         echo "<td>$row->nbplayer/$row->maxplayer</td>";
 	echo "<td><a href=\"/wp-admin/admin.php?page=adminServer&id=" . $row->id . "\">" . $row->adminurl . "</td>";
-	echo "<td><a href=\"/wp-admin/admin.php?page=mapServer&id=" . $row->id . "\">" . $row->adminurl . "</td>"; 
-	echo "<td><a href=\"/wp-admin/admin.php?page=editorServer&id=" . $row->id . "\">" . $row->adminurl . "</td>";
+	echo "<td><a href=\"/wp-admin/admin.php?page=mapServer&id=" . $row->id . "\">" . $row->mapurl . "</td>"; 
+	echo "<td><a href=\"/wp-admin/admin.php?page=editorServer&id=" . $row->id . "\">" . $row->editorurl . "</td>";
 
         echo "<td>
 		<a href='" . admin_url('admin.php?page=viewServer&id=' . $row->id) . "'>View</a>|

@@ -7,6 +7,7 @@ function editorServer () {
         sshurl, sshlogin, sshpassword,
         adminurl, adminlogin, adminpassword,
         audiochaturl, audiochatlogin, audiochatpassword,
+	mapurl, editorurl,
         nbplugin, listplugin, nbplayer, maxplayer
         from wp_minecraft where id=%s",$id));
         foreach ($servers as $server ) {
@@ -17,7 +18,8 @@ function editorServer () {
             $version = $server->version;
 
             $adminurl = $server->adminurl;
-
+	    $mapurl = $server->mapurl;
+	    $editorurl = $server->editorurl;
     }
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
@@ -32,9 +34,9 @@ function editorServer () {
 	<?php echo $status; ?>&nbsp;
 	<?php echo $version; ?>&nbsp;
 	<br/>
-	Direct url: <?php echo $adminurl; ?>&nbsp;<br/>
+	Direct url: <?php echo $editorurl; ?>&nbsp;<br/>
 
-	<iframe src="/wp-content/plugins/MinecraftAdministration/server/script.php" width="100%" height="400px">
+	<iframe src="/wp-content/plugins/MinecraftAdministration/server/<?php echo $editorurl; ?>" width="100%" height="400px">
     </div>
 <?php
 }

@@ -7,6 +7,7 @@ function adminServer () {
         sshurl, sshlogin, sshpassword,
         adminurl, adminlogin, adminpassword,
         audiochaturl, audiochatlogin, audiochatpassword,
+	mapurl, editorurl,
         nbplugin, listplugin, nbplayer, maxplayer
         from wp_minecraft where id=%s",$id));
         foreach ($servers as $server ) {
@@ -17,7 +18,8 @@ function adminServer () {
             $version = $server->version;
 
             $adminurl = $server->adminurl;
-
+	    $mapurl = $server->mapurl;
+	    $editorurl = $server->editorurl;
     }
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />

@@ -16,6 +16,8 @@ function updateServer () {
     $audiochaturl = $_POST["audiochaturl"];
     $audiochatlogin = $_POST["audiochatlogin"];
     $audiochatpassword = $_POST["audiochatpassword"];
+    $mapurl = $_POST["mapurl"];
+    $editorurl = $_POST["mapurl"];
     $nbplugin = $_POST["nbplugin"];
     $listplugin = $_POST["listplugin"];
 
@@ -29,6 +31,7 @@ function updateServer () {
                     'sshurl' => $sshurl, 'sshlogin' => $sshlogin, 'sshpassword' => $sshpassword,
                     'adminurl' => $adminurl, 'adminlogin' => $adminlogin, 'adminpassword' => $adminpassword,
                     'audiochaturl' => $audiochaturl, 'audiochatlogin' => $audiochatlogin, 'audiochatpassword' => $audiochatpassword, 
+		    'mapurl' => $mapurl, 'editorurl' => $editorurl,
                     'nbplugin' => $nbplugin, 'listplugin' => $listplugin,
                     'nbplayer' => $nbplayer, 'maxplayer' => $maxplayer
                     ), 
@@ -43,6 +46,7 @@ function updateServer () {
         sshurl, sshlogin, sshpassword,
         adminurl, adminlogin, adminpassword,
         audiochaturl, audiochatlogin, audiochatpassword,
+        mapurl, editorurl,
         nbplugin, listplugin,
         nbplayer, maxplayer
         from wp_minecraft where id=%s",$id));
@@ -64,6 +68,9 @@ function updateServer () {
             $audiochaturl = $server->audiochaturl;
             $audiochatlogin = $server->audiochatlogin;
             $audiochatpassword = $server->audiochatpassword;
+
+	    $mapurl = $server->mapurl;
+            $editorurl = $server->editorurl;
 
             $nbplugin = $server->nbplugin;
             $listplugin = $server->listplugin;
@@ -192,6 +199,23 @@ function updateServer () {
                         <input type="text" name="audiochatpassword" value="<?php echo $audiochatpassword;?>"/>
                     </td>
                 </tr>
+
+
+
+                <tr>
+                    <th>Map url</th>
+                    <td>
+                        <input type="text" name="mapurl" value="<?php echo $mapurl;?>"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Admin url</th>
+                    <td>
+                        <input type="text" name="editorurl" value="<?php echo $editorurl;?>"/>
+                    </td>
+                </tr>
+
 
                 <tr>
                     <th>Nb Plugin</th>

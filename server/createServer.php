@@ -15,6 +15,8 @@ function createServer () {
     $audiochaturl = $_POST["audiochaturl"];
     $audiochatlogin = $_POST["audiochatlogin"];
     $audiochatpassword = $_POST["audiochatpassword"];
+    $mapurl = $_POST["mapurl"];
+    $editorurl = $_POST["editorurl"];
     $nbplugin = $_POST["nbplugin"];
     $listplugin = $_POST["listplugin"];
     $nbplayer = $_POST["nbplayer"];
@@ -28,13 +30,15 @@ function createServer () {
                     'sshurl' => $sshurl, 'sshlogin' => $sshlogin, 'sshpassword' => $sshpassword,
                     'adminurl' => $adminurl, 'adminlogin' => $adminlogin, 'adminpassword' => $adminpassword,
                     'audiochaturl' => $audiochaturl, 'audiochatlogin' => $audiochatlogin, 'audiochatpassword' => $audiochatpassword, 
+		    'mapurl' => $mapurl, 'editorurl' => $editorurl,
                     'nbplugin' => $nbplugin, 'listplugin' => $listplugin,
                     'nbplayer' => $nbplayer, 'maxplayer' => $maxplayer
                   ),
-            array(  '%s', '%s' , '%s' , '%d', '%s',
-                    '%s', '%s', '%s' ,
-                    '%s', '%s', '%s' ,
-                    '%s', '%s', '%s' ,
+            array(  '%s', '%s' , '%s', '%d', '%s',
+                    '%s', '%s', '%s',
+                    '%s', '%s', '%s',
+                    '%s', '%s', '%s',
+		    '%s', '%s',
                     '%d', '%s',
                     '%d', '%d'
 		)
@@ -144,6 +148,19 @@ function createServer () {
                     <th>Audio chat password</th>
                     <td>
                         <input type="text" name="audiochatpassword" value="<?php echo $audiochatpassword;?>"/>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <th>Map url</th>
+                    <td>
+                        <input type="text" name="mapurl" value="<?php echo $mapurl;?>"/>
+                    </td>
+                </tr>
+                 <tr>
+                    <th>Editor url</th>
+                    <td>
+                        <input type="text" name="editorurl" value="<?php echo $editorurl;?>"/>
                     </td>
                 </tr>
 

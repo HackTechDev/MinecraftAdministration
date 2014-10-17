@@ -7,6 +7,7 @@ function mapServer () {
         sshurl, sshlogin, sshpassword,
         adminurl, adminlogin, adminpassword,
         audiochaturl, audiochatlogin, audiochatpassword,
+	mapurl, editorurl,
         nbplugin, listplugin, nbplayer, maxplayer
         from wp_minecraft where id=%s",$id));
         foreach ($servers as $server ) {
@@ -17,7 +18,8 @@ function mapServer () {
             $version = $server->version;
 
             $adminurl = $server->adminurl;
-
+	    $mapurl = $server->mapurl;
+	    $editorurl = $server->editorurl;
     }
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
@@ -32,8 +34,8 @@ function mapServer () {
 	<?php echo $status; ?>&nbsp;
 	<?php echo $version; ?>&nbsp;
 	<br/>
-	Direct url: <?php echo $adminurl; ?>&nbsp;<br/>
-	 <iframe src="/mcmap/" width="100%" height="800px"></iframe> 
+	Direct url: <?php echo $mapurl; ?>&nbsp;<br/>
+	 <iframe src="<?php echo $mapurl; ?>" width="100%" height="800px"></iframe> 
     </div>
 <?php
 }

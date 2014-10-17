@@ -84,10 +84,14 @@ function minecraft_install() {
                     audiochaturl varchar(255) DEFAULT NULL,
                     audiochatlogin varchar(255) DEFAULT NULL,
                     audiochatpassword varchar(255) DEFAULT NULL,                   
+		    mapurl varchar(255) DEFAULT NULL,
+		    editorurl varchar(255) DEFAULT NULL,
                     nbplugin int(3) DEFAULT NULL,
                     listplugin varchar(255) DEFAULT NULL,
                     nbplayer int(3) DEFAULT NULL,
                     maxplayer int(3) DEFAULT NULL,
+		    createdon varchar(255) DEFAULT NULL,
+  		    updatedon varchar(255) DEFAULT NULL,
                     PRIMARY KEY (`id`)
                 ) $charset_collate;
             ";
@@ -114,7 +118,7 @@ function minecraft_insert_data() {
                 'sshlogin' => '',
                 'sshpassword' => '',
 
-                'adminurl' => '',
+                'adminurl' => '192.168.1.1',
                 'adminlogin' => '',
                 'adminpassword' => '',
 
@@ -122,17 +126,23 @@ function minecraft_insert_data() {
                 'audiochatlogin' => '',
                 'audiochatpassword' => '',
 
+		'mapurl' => '/mapmc',
+		'editorurl => 'script.php',
+
                 'nbplugin' => '',
                 'listplugin' => '',
                 'nbplayer' => '',
-                'maxplayer' => ''
+                'maxplayer' => '',
+		'createdon' => '',
+		'updatedon' => ''
                 ), 
         array(  '%d', '%s', '%s', '%s' , '%d', '%s',
                 '%s', '%s', '%s' ,
                 '%s', '%s', '%s' ,
                 '%s', '%s', '%s' ,
                 '%d', '%s',
-                '%d', '%d'
+                '%d', '%d',
+		'%d', '%d'
               ) 
     );
 
