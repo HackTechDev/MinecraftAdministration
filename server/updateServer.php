@@ -16,8 +16,10 @@ function updateServer () {
     $audiochaturl = $_POST["audiochaturl"];
     $audiochatlogin = $_POST["audiochatlogin"];
     $audiochatpassword = $_POST["audiochatpassword"];
+
     $mapurl = $_POST["mapurl"];
-    $editorurl = $_POST["mapurl"];
+    $editorurl = $_POST["editorurl"];
+
     $nbplugin = $_POST["nbplugin"];
     $listplugin = $_POST["listplugin"];
 

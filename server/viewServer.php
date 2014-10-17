@@ -35,7 +35,6 @@ function viewServer () {
  	    $mapurl = $server->mapurl;
             $editorurl = $server->editorurl;
 
-
             $nbplugin = $server->nbplugin;
             $listplugin = $server->listplugin;
 
