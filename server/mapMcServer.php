@@ -1,5 +1,5 @@
 <?php
-function mapServer () {
+function mapMcServer () {
     global $wpdb;
     $id = $_GET["id"];
 
@@ -26,7 +26,7 @@ function mapServer () {
     <div class="wrap">
     <h2><?php echo ucfirst($name);?> Server</h2>
 
-        <a href="<?php echo admin_url('admin.php?page=listServer')?>">&laquo; Back to server list</a>
+        <a href="<?php echo admin_url('admin.php?page=listMcServer')?>">&laquo; Back to server list</a>
 	<br/>
 	<?php echo $name; ?>&nbsp;
 	<?php echo $description; ?>&nbsp;

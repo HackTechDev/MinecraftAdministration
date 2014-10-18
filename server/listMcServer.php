@@ -1,10 +1,10 @@
 <?php
-function listServer () {
+function listMcServer () {
 ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
     <div class="wrap">
         <h2>Server List</h2>
-            <a href="<?php echo admin_url('admin.php?page=createServer'); ?>">Create a server</a>
+            <a href="<?php echo admin_url('admin.php?page=createMcServer'); ?>">Create a server</a>
     <?php
     global $wpdb;
     $rows = $wpdb->get_results("SELECT id, name, description, host, status, adminurl, mapurl, editorurl, nbplayer, maxplayer from wp_minecraft");
@@ -21,11 +21,11 @@ function listServer () {
         echo "<td>$row->status</td>";
         echo "<td>$row->nbplayer/$row->maxplayer</td>";
         echo "<td>
-		<a href='" . admin_url('admin.php?page=viewServer&id=' . $row->id) . "'>View</a>|
-		<a href='" . admin_url('admin.php?page=updateServer&id=' . $row->id) . "'>Update</a>|
-		<a href='" . admin_url('admin.php?page=adminServer&id=' . $row->id) . "'>Admin</a>|
-		<a href='" . admin_url('admin.php?page=mapServer&id=' . $row->id) . "'>Map</a>|
-		<a href='" . admin_url('admin.php?page=editorServer&id=' . $row->id) . "'>Editor</a>
+		<a href='" . admin_url('admin.php?page=viewMcServer&id=' . $row->id) . "'>View</a>|
+		<a href='" . admin_url('admin.php?page=updateMcServer&id=' . $row->id) . "'>Update</a>|
+		<a href='" . admin_url('admin.php?page=adminMcServer&id=' . $row->id) . "'>Admin</a>|
+		<a href='" . admin_url('admin.php?page=mapMcServer&id=' . $row->id) . "'>Map</a>|
+		<a href='" . admin_url('admin.php?page=editorMcServer&id=' . $row->id) . "'>Editor</a>
 		</td>";
         echo "</tr>";}
     echo "</table>";

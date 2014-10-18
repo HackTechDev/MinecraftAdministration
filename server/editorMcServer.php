@@ -1,5 +1,5 @@
 <?php
-function adminServer () {
+function editorMcServer () {
     global $wpdb;
     $id = $_GET["id"];
 
@@ -26,7 +26,7 @@ function adminServer () {
     <div class="wrap">
     <h2><?php echo ucfirst($name);?> Server</h2>
 
-        <a href="<?php echo admin_url('admin.php?page=listServer')?>">&laquo; Back to server list</a>
+        <a href="<?php echo admin_url('admin.php?page=listMcServer')?>">&laquo; Back to server list</a>
 	<br/>
 	<?php echo $name; ?>&nbsp;
 	<?php echo $description; ?>&nbsp;
@@ -34,8 +34,9 @@ function adminServer () {
 	<?php echo $status; ?>&nbsp;
 	<?php echo $version; ?>&nbsp;
 	<br/>
-	Direct url: <?php echo $adminurl; ?>&nbsp;<br/>
-	 <iframe src="<?php echo $adminurl; ?>" width="100%" height="800px"></iframe> 
+	Direct url: <?php echo $editorurl; ?>&nbsp;<br/>
+
+	<iframe src="/wp-content/plugins/MinecraftAdministration/server/<?php echo $editorurl; ?>" width="100%" height="400px">
     </div>
 <?php
 }

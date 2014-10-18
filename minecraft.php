@@ -170,18 +170,18 @@ if ( is_admin() ) {
 
     function minecraft_menu() {
 
-        add_options_page('Minecraft Administration', 'Minecraft Administration', 'administrator', basename(__FILE__), 'minecraft_option');
+        add_options_page('Minecraft Server Administration', 'Minecraft Server Administration', 'administrator', basename(__FILE__), 'minecraft_option');
 
-        add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'homepage', 'homepage', plugins_url('MinecraftAdministration/image/icon.png'));
-	add_submenu_page('homepage', 'List Server', 'List Server', 'manage_options', 'listServer', 'listServer');
-        add_submenu_page('homepage', 'Create Server', 'Create Server', 'manage_options', 'createServer', 'createServer'); 
+        add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'McAdminHomepage', 'McAdminHomepage', plugins_url('MinecraftAdministration/image/icon.png'));
+	add_submenu_page('McAdminHomepage', 'List Minecraft Server', 'List Minecraft Server', 'manage_options', 'listMcServer', 'listMcServer');
+        add_submenu_page('McAdminHomepage', 'Create Minecraft Server', 'Create Minecraft Server', 'manage_options', 'createMcServer', 'createMcServer'); 
  
         //this submenu is HIDDEN, however, we need to add it anyways
-        add_submenu_page(null, 'Update Server', 'Update', 'manage_options', 'updateServer', 'updateServer');
-        add_submenu_page(null, 'View Server', 'View', 'manage_options', 'viewServer', 'viewServer');
-        add_submenu_page(null, 'Admin Server', 'Admin', 'manage_options', 'adminServer', 'adminServer');
-        add_submenu_page(null, 'Map Server', 'Map', 'manage_options', 'mapServer', 'mapServer');
-	add_submenu_page(null, 'Editor Server', 'Editor', 'manage_options', 'editorServer', 'editorServer');
+        add_submenu_page(null, 'Update Minecraft Server', 'Update', 'manage_options', 'updateMcServer', 'updateMcServer');
+        add_submenu_page(null, 'View Minecraft Server', 'View', 'manage_options', 'viewMcServer', 'viewMcServer');
+        add_submenu_page(null, 'Admin Minecraft Server', 'Admin', 'manage_options', 'adminMcServer', 'adminMcServer');
+        add_submenu_page(null, 'Map Minecraft Server', 'Map', 'manage_options', 'mapMcServer', 'mapMcServer');
+	add_submenu_page(null, 'Editor Minecraft Server', 'Editor', 'manage_options', 'editorMcServer', 'editorMcServer');
 
     }
 
@@ -308,13 +308,13 @@ add_filter("plugin_action_links_$plugin", 'minecraft_settings_link' );
 
 
 define('ROOTDIR', plugin_dir_path(__FILE__));
-require_once(ROOTDIR . 'homepage.php');
-require_once(ROOTDIR . 'server/listServer.php');
-require_once(ROOTDIR . 'server/createServer.php');
-require_once(ROOTDIR . 'server/updateServer.php');
-require_once(ROOTDIR . 'server/viewServer.php');
-require_once(ROOTDIR . 'server/adminServer.php');
-require_once(ROOTDIR . 'server/mapServer.php');
-require_once(ROOTDIR . 'server/editorServer.php');
+require_once(ROOTDIR . 'McAdminHomepage.php');
+require_once(ROOTDIR . 'server/listMcServer.php');
+require_once(ROOTDIR . 'server/createMcServer.php');
+require_once(ROOTDIR . 'server/updateMcServer.php');
+require_once(ROOTDIR . 'server/viewMcServer.php');
+require_once(ROOTDIR . 'server/adminMcServer.php');
+require_once(ROOTDIR . 'server/mapMcServer.php');
+require_once(ROOTDIR . 'server/editorMcServer.php');
 
 ?>

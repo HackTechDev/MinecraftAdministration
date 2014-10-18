@@ -1,6 +1,6 @@
 <?php
 
-function homepage () {
+function McAdminHomepage () {
 
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
@@ -10,27 +10,30 @@ function homepage () {
 
 
 <div id="welcome-panel" class="welcome-panel">
-   <div class="welcome-panel-content">
+  <div class="welcome-panel-content">
       <h3>Manage your Minecraft Servers Now!</h3>
       <p class="about-description">Create/List/Update/Delete your server.</p>
       <div class="welcome-panel-column-container">
          <div class="welcome-panel-column">
             <h4>Start here:</h4>
-            <a class="button button-primary button-hero load-customize hide-if-no-customize" href="/wp-admin/admin.php?page=createServer">New server</a>
+            <a class="button button-primary button-hero load-customize hide-if-no-customize" href="/wp-admin/admin.php?page=createMcServer">New server</a>
             <br/>or<br/>
-            <a class="button button-primary button-hero load-customize hide-if-no-customize" href="/wp-admin/admin.php?page=listServer">List existing server</a>
+            <a class="button button-primary button-hero load-customize hide-if-no-customize" href="/wp-admin/admin.php?page=listMcServer">List existing server</a>
 	    <br/><br/>
          </div>
          <div class="welcome-panel-column">
             <h4>Basic Action</h4>
             <ul>
-               <li><a href="#" class="welcome-icon welcome-view-site">Show the map</a></li>
+               <li><a href="/wp-admin/admin.php?page=adminMcServer&id=1" class="welcome-icon welcome-view-site">Administre the server</a></li>
+            </ul>
+            <ul>
+               <li><a href="/wp-admin/admin.php?page=mapMcServer&id=1" class="welcome-icon welcome-view-site">Show the map</a></li>
             </ul>
          </div>
          <div class="welcome-panel-column welcome-panel-last">
             <h4>Advanced Action</h4>
             <ul>
-               <li><a href="#" class="welcome-icon welcome-learn-more">Edit the map with Python script</a></li>
+               <li><a href="/wp-admin/admin.php?page=editorMcServer&id=1" class="welcome-icon welcome-learn-more">Edit the map with Python script</a></li>
             </ul>
          </div>
       </div>

@@ -1,6 +1,6 @@
 <?php
 
-function createServer () {
+function createMcServer () {
     $name = $_POST["name"];
     $description = $_POST["description"];
     $host = $_POST["host"];
@@ -56,7 +56,7 @@ function createServer () {
                         <?php echo $message;?>
                     </p>
                 </div>
-                <a href="<?php echo admin_url('admin.php?page=listServer')?>">&laquo; Back to server list</a>
+                <a href="<?php echo admin_url('admin.php?page=listMcServer')?>">&laquo; Back to server list</a>
             <?php endif;?>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
             <table class='wp-list-table widefat fixed'>

@@ -1,6 +1,6 @@
 <?php
 
-function viewServer () {
+function viewMcServer () {
     global $wpdb;
     $id = $_GET["id"];
 
@@ -50,7 +50,7 @@ function viewServer () {
     <div class="wrap">
     <h2><?php echo ucfirst($name);?> Server</h2>
 
-        <a href="<?php echo admin_url('admin.php?page=listServer')?>">&laquo; Back to server list</a>
+        <a href="<?php echo admin_url('admin.php?page=listMcServer')?>">&laquo; Back to server list</a>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
             <table class='wp-list-table widefat fixed'>
                 <tr>
