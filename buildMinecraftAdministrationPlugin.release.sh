@@ -2,5 +2,5 @@
 
 cd ..
 rm MinecraftAdministration.zip
-zip -r MinecraftAdministration.zip MinecraftAdministration -x "MinecraftAdministration/.git"
+zip -r MinecraftAdministration.zip MinecraftAdministration -x *.git*
 cd MinecraftAdministration
