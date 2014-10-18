@@ -1,6 +1,6 @@
 <?php
 
-function mcAdminHomepage () {
+function homepage () {
 
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
@@ -79,37 +79,39 @@ function mcAdminHomepage () {
          </div>
       </div>
 
-<!--
+
       <div id="postbox-container-2" class="postbox-container">
          <div id="side-sortables" class="meta-box-sortables ui-sortable">
             <div id="dashboard_primary" class="postbox ">
-               <h3 class="hndle"><span>Nouvelles de WordPress</span></h3>
+               <h3 class="hndle"><span>News</span></h3>
                <div class="inside">
                   <div class="rss-widget">
                      <ul>
                         <li>
-                           <a class="rsswidget" href="http://feedproxy.google.com/~r/WordpressFrancophone/~3/osH2m0-PhXg/">Retour sur WordCamp Europe</a> <span class="rss-date">7 octobre 2014</span>
-                           <div class="rssSummary">Le week-end du 27-29 septembre, plus de 900 personnes venant du monde entier se sont retrouvées à Sofia, Bulgarie, pour le 2e annuel WordCamp Europe. Sur un fond postsoviétique, meublé de béton, de passages souterrains et câbles électriques pondus partout comme des guirlandes de Noël, la communauté WordPress s’est réunie autour d’un idéalisme le plus […]</div>
+                           <a class="rsswidget" href="#">Script</a> <span class="rss-date">October 2014</span>
+                           <div class="rssSummary">Python script to create a pillar</div>
                         </li>
                      </ul>
                   </div>
                   <div class="rss-widget">
                      <ul>
-                        <li><a class="rsswidget" href="http://lashon.fr/divi-theme-wordpress-premium-gratuit/">Lashon : Cadeau Gratuit : Divi, le dernier grand theme wordpress premium gratuit</a></li>
-                        <li><a class="rsswidget" href="http://wpchannel.com/condition-verifier-auteur-publie-article-wordpress/">WordPress Channel : Vérifier si un auteur a publié au moins un article sous WordPress</a></li>
-                        <li><a class="rsswidget" href="http://www.seomix.fr/desactivez-pagination-wordpress/">SEOMix : SX No Pagination : désactivez la pagination de WordPress</a></li>
+                        <li><a class="rsswidget" href="#">Map viewer</a> <span class="rss-date">October 2014</span>
+                           <div class="rssSummary">Map generator and viewer</div>
+			</li>
                      </ul>
                   </div>
                   <div class="rss-widget">
                      <ul>
-                        <li class="dashboard-news-plugin"><span>Extensions populaires:</span> <a href="http://wordpress.org/plugins/black-studio-tinymce-widget/" class="dashboard-news-plugin-link">Black Studio TinyMCE Widget</a>&nbsp;<span>(<a href="plugin-install.php?tab=plugin-information&amp;plugin=black-studio-tinymce-widget&amp;_wpnonce=620b646f1a&amp;TB_iframe=true&amp;width=772&amp;height=371" class="thickbox" title="Black Studio TinyMCE Widget">Installer</a>)</span></li>
+			<li><a class="rsswidget" href="#">Server administration</a> <span class="rss-date">October 2014</span>
+                           <div class="rssSummary">Administration panel to manage Minecraft servers</div>
+                        </li>
                      </ul>
                   </div>
                </div>
             </div>
          </div>
       </div>
--->
+
 
 
    </div>
