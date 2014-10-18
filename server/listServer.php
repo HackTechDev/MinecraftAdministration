@@ -9,8 +9,8 @@ function listServer () {
     global $wpdb;
     $rows = $wpdb->get_results("SELECT id, name, description, host, status, adminurl, mapurl, editorurl, nbplayer, maxplayer from wp_minecraft");
     echo "<table class='wp-list-table widefat fixed'>";
-    echo "<tr><th>id</th>
-        <th>name</th><th>description</th><th>host</th><th>status</th><th>player</th><th>admin</th><th>map</th><th>editor</th>
+    echo "<tr><th width='40px'>id</th>
+        <th width='200px'>name</th><th width='200px'>description</th><th width='200px'>host</th><th width='70px'>status</th><th width='70px'>player</th>
         <th>&nbsp;</th></tr>";
     foreach ($rows as $row ){
         echo "<tr>";
@@ -20,13 +20,12 @@ function listServer () {
         echo "<td>$row->host</td>";	
         echo "<td>$row->status</td>";
         echo "<td>$row->nbplayer/$row->maxplayer</td>";
-	echo "<td><a href=\"/wp-admin/admin.php?page=adminServer&id=" . $row->id . "\">" . $row->adminurl . "</td>";
-	echo "<td><a href=\"/wp-admin/admin.php?page=mapServer&id=" . $row->id . "\">" . $row->mapurl . "</td>"; 
-	echo "<td><a href=\"/wp-admin/admin.php?page=editorServer&id=" . $row->id . "\">" . $row->editorurl . "</td>";
-
         echo "<td>
 		<a href='" . admin_url('admin.php?page=viewServer&id=' . $row->id) . "'>View</a>|
-		<a href='" . admin_url('admin.php?page=updateServer&id=' . $row->id) . "'>Update</a>
+		<a href='" . admin_url('admin.php?page=updateServer&id=' . $row->id) . "'>Update</a>|
+		<a href='" . admin_url('admin.php?page=adminServer&id=' . $row->id) . "'>Admin</a>|
+		<a href='" . admin_url('admin.php?page=mapServer&id=' . $row->id) . "'>Map</a>|
+		<a href='" . admin_url('admin.php?page=editorServer&id=' . $row->id) . "'>Editor</a>
 		</td>";
         echo "</tr>";}
     echo "</table>";
