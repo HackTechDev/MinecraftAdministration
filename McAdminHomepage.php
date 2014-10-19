@@ -73,9 +73,9 @@ function McAdminHomepage () {
                      <div id="published-posts" class="activity-block">
                         <h4>Publié récemment</h4>
                         <ul>
-                           <li><span>12 oct, 17 h 01 min</span> <a href="http://nekrocite.info/wp-admin/post.php?post=20&amp;action=edit">Carte Minecraft</a></li>
-                           <li><span>29 sept, 22 h 38 min</span> <a href="http://nekrocite.info/wp-admin/post.php?post=15&amp;action=edit">Administration : milkAdmin</a></li>
-                           <li><span>27 sept, 10 h 10 min</span> <a href="http://nekrocite.info/wp-admin/post.php?post=1&amp;action=edit">Serveur Minecraft</a></li>
+                           <li><span>12 oct, 17 h 01 min</span> <a href="/wp-admin/post.php?post=20&amp;action=edit">Carte Minecraft</a></li>
+                           <li><span>29 sept, 22 h 38 min</span> <a href="/wp-admin/post.php?post=15&amp;action=edit">Administration : milkAdmin</a></li>
+                           <li><span>27 sept, 10 h 10 min</span> <a href="/wp-admin/post.php?post=1&amp;action=edit">Serveur Minecraft</a></li>
                         </ul>
                      </div>
                   </div>
