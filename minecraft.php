@@ -175,6 +175,7 @@ if ( is_admin() ) {
         add_menu_page('Minecraft Administration', 'Minecraft Administration', 'manage_options', 'McAdminHomepage', 'McAdminHomepage', plugins_url('MinecraftAdministration/image/icon.png'));
 	add_submenu_page('McAdminHomepage', 'List Minecraft Server', 'List Minecraft Server', 'manage_options', 'listMcServer', 'listMcServer');
         add_submenu_page('McAdminHomepage', 'Create Minecraft Server', 'Create Minecraft Server', 'manage_options', 'createMcServer', 'createMcServer'); 
+        add_submenu_page('McAdminHomepage', 'Avatar Skin', 'Avatar Skin', 'manage_options', 'avatarSkin', 'avatarSkin'); 
  
         //this submenu is HIDDEN, however, we need to add it anyways
         add_submenu_page(null, 'Update Minecraft Server', 'Update', 'manage_options', 'updateMcServer', 'updateMcServer');
@@ -309,6 +310,7 @@ add_filter("plugin_action_links_$plugin", 'minecraft_settings_link' );
 
 define('ROOTDIR', plugin_dir_path(__FILE__));
 require_once(ROOTDIR . 'McAdminHomepage.php');
+require_once(ROOTDIR . 'avatar/avatarSkin.php');
 require_once(ROOTDIR . 'server/listMcServer.php');
 require_once(ROOTDIR . 'server/createMcServer.php');
 require_once(ROOTDIR . 'server/updateMcServer.php');

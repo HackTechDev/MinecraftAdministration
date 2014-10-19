@@ -13,14 +13,26 @@ Minecraft
 =========
 
 - Page view/admin/map/script server
+
 - Spigot server manager: MilkAdmin
+
   http://steamcyberpunk.net/minecraft-installation-milkadmin/
+
 - Query Spigot/Craftbukkit server:
+
   https://github.com/xPaw/PHP-Minecraft-Query
+
 - Execute Python script with MCPI dev:
+
   http://mcpipy.wordpress.com/
+
 - Map world:
+
   https://github.com/Zahl/mcmap
+
+- Show avatar:
+
+  https://github.com/jamiebicknell/Minecraft-Avatar
 
 Plugin
 ======
