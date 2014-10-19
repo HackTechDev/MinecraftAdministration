@@ -24,7 +24,7 @@ function McAdminHomepage () {
          <div class="welcome-panel-column">
             <h4>Basic Action</h4>
             <ul>
-               <li><a href="/wp-admin/admin.php?page=adminMcServer&id=1" class="welcome-icon welcome-view-site">Administre the server</a></li>
+               <li><a href="/wp-admin/admin.php?page=adminMcServer&id=1" class="welcome-icon welcome-view-site">Administrate the server</a></li>
             </ul>
             <ul>
                <li><a href="/wp-admin/admin.php?page=mapMcServer&id=1" class="welcome-icon welcome-view-site">Show the map</a></li>

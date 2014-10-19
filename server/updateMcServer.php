@@ -97,7 +97,7 @@ function updateMcServer () {
     ?>
     <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/css/style-admin.css" rel="stylesheet" />
     <div class="wrap">
-    <h2>Server</h2>
+    <h2><?php echo ucfirst($name);?> Server</h2>
 
     <?php if($_POST['delete']){ ?>
         <div class="updated"><p>Delete Server</p></div>
