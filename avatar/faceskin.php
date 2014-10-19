@@ -1,6 +1,6 @@
 <?php
+$username = "Steve";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
    if (empty($_POST["username"])) {
      $username = "";
    } else {
@@ -23,7 +23,8 @@ function test_input($data) {
    <br><br>
    <input type="submit" name="submit" value="Show the avatar">
 </form>
-
+Avatar : <?php echo $username; ?><br>
+<br/>
 Face:<br/>
 <br/>
 	<img src='/wp-content/plugins/MinecraftAdministration/avatar/face.php?u=<?php echo $username; ?>&s=96&v=f' />&nbsp;

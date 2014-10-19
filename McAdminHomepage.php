@@ -29,6 +29,10 @@ function McAdminHomepage () {
             <ul>
                <li><a href="/wp-admin/admin.php?page=mapMcServer&id=1" class="welcome-icon welcome-view-site">Show the map</a></li>
             </ul>
+            <ul>
+               <li><a href="/wp-admin/admin.php?page=avatarSkin" class="welcome-icon welcome-view-site">Display the avatar skin</a></li>
+            </ul>
+
          </div>
          <div class="welcome-panel-column welcome-panel-last">
             <h4>Advanced Action</h4>

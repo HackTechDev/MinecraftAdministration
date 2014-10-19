@@ -6,7 +6,7 @@ function avatarSkin() {
     <div class="wrap">
     <h2>Avatar Face and Skin</h2>
 
-	<iframe src="/wp-content/plugins/MinecraftAdministration/avatar/faceskin.php?username=steve" width="100%" height="500px">
+	<iframe src="/wp-content/plugins/MinecraftAdministration/avatar/faceskin.php?username=steve" width="100%" height="700px">
 
    </div>
 
