@@ -209,8 +209,10 @@ echo "</pre>
 Add stylesheet and javascript in header
 */
 function addHeader() {
+/*
    print '<link media="screen" type="text/css" href="/wp-content/plugins/minecraft/css/style.css" rel="stylesheet">';
    print '<script type="text/javascript" src="/wp-content/plugins/minecraft/js/main.js"></script>';
+*/
 }
 add_action('wp_head', 'addHeader');
 
